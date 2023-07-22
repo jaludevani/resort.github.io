@@ -1,0 +1,147 @@
+
+<html>
+<head>
+<title>Login page</title>
+<!-- Include CSS File Here -->
+<!-- Include JS File Here -->
+</head>
+<body>
+    <div class="img">
+<div class="container">
+<div class="main">
+<h2>Login</h2>
+<form id="form_id" method="post" name="myform">
+<label>User Name :</label>
+<input type="text" name="username" id="username">
+<label>Password :</label>
+<input type="password" name="password" id="password">
+<tr>
+    <td>
+        <a href="file:///D:/resort/index.html">
+            <input type="button" value="Login" id="submit" onclick="validate()"/>
+
+        </a>
+    </td>
+</tr>
+</form>
+<span><b class="note">Note : </b>For this use following username and password. <br/><b class="valid">User Name : Jalu<br/>Password : Jd0001jd</b></span>
+</div>
+</div>
+
+</body>
+</div>
+</html>
+
+
+<!-- login ends -->
+
+
+
+
+
+<style>
+    
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+.img{
+    background-image: url(https://media.istockphoto.com/photos/wooden-jetty-on-turquoise-sea-with-clear-sky-background-picture-id1369242656?k=20&m=1369242656&s=612x612&w=0&h=qSQL2lTj0QUtikiisYeGbdtkReZLXSHBzzvBnOrHoxA=); 
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    overflow: hidden;
+    align-items: center;
+    
+}
+h2{
+padding: 30px 35px;
+margin: -10px -50px;
+text-align:center;
+border-radius: 10px 10px 0 0;
+}
+hr{
+margin: 10px -50px;
+border: 0;
+border-top: 1px solid #ccc;
+margin-bottom: 40px;
+}
+div.container{
+width: 900px;
+height: 610px;
+margin:35px auto;
+font-family: 'Raleway', sans-serif;
+}
+div.main{
+width: 300px;
+padding: 10px 50px 25px;
+border: 2px solid rgb(177, 170, 170);
+border-radius: 10px;
+font-family: raleway;
+float:left;
+margin-top:50px;
+}
+input[type=text],input[type=password]{
+width: 100%;
+height: 40px;
+padding: 5px;
+margin-bottom: 25px;
+margin-top: 5px;
+border: 2px solid #ccc;
+color: #4f4f4f;
+font-size: 16px;
+border-radius: 5px;
+}
+label{
+color: #464646;
+text-shadow: 0 1px 0 #fff;
+font-size: 14px;
+font-weight: bold;
+}
+center{
+font-size:32px;
+}
+.note{
+color:rgb(236, 113, 113);
+}
+.valid{
+color: rgb(141, 141, 222);
+}
+
+input[type=button]{
+font-size: 16px;
+background: linear-gradient(#2098a0 5%, #9fdfe3 100%);
+border: 1px solid #2098a0;
+color: #115a5f;
+font-weight: bold;
+cursor: pointer;
+width: 100%;
+border-radius: 5px;
+padding: 10px 0;
+outline:none;
+}
+input[type=button]:hover{
+background: linear-gradient(#115a5f 5%, #64b7bc 100%);
+}
+</style>
+<script>
+    var attempt = 3; // Variable to count number of attempts.
+    // Below function Executes on click of login button.
+    function validate() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        if (username == "Jalu" && password == "Jd0001jd") {
+            alert("Login successfully");
+            window.location = "success.html"; // Redirecting to other page.
+            return false;
+        }
+        else {
+            attempt--;// Decrementing by one.
+            alert("You have left " + attempt + " attempt;");
+            // Disabling fields after 3 attempts.
+            if (attempt == 0) {
+                document.getElementById("username").disabled = true;
+                document.getElementById("password").disabled = true;
+                document.getElementById("submit").disabled = true;
+                return false;
+            }
+        }
+    }
+</script>
